@@ -9,7 +9,7 @@ const rootElement = document.querySelector('#root');
 if (rootElement !== null) {
   createRoot(rootElement).render(
     <StrictMode>
-      <App title="repo-vite-react-base" />
+      <App title="Terminale dell'Operatore — Zion" />
     </StrictMode>
   );
 }

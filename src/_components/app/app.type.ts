@@ -1,9 +1,9 @@
 /**
- * Properties accepted by the root application component.
+ * Properties accepted by the root App component.
  */
 export type TAppProps = {
   /**
-   * Application heading title displayed in the main view.
+   * Optional custom title displayed in the application header.
    */
-  readonly title: string;
+  readonly title?: string;
 };
