@@ -1,0 +1,95 @@
+{
+  "name": "operator-terminal",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morriconeluca/repo-vite-react-base.git"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "check": "node --import ./scripts/register-script-typescript.ts scripts/check.ts",
+    "ci": "npm run gate:1 && npm run gate:2 && npm run gate:3 && npm run gate:4:diff && npm run gate:5",
+    "dev": "vite",
+    "gate:1": "prettier --check --cache --cache-location .cache/prettier/.prettiercache . && tsc --noEmit",
+    "gate:2": "eslint .",
+    "gate:3": "vitest run --coverage",
+    "gate:4:diff": "node --import ./scripts/register-script-typescript.ts scripts/mutate-diff.ts --mode=diff",
+    "gate:4:force": "node --import ./scripts/register-script-typescript.ts scripts/mutate-diff.ts --mode=force",
+    "gate:4:incremental": "node --import ./scripts/register-script-typescript.ts scripts/mutate-diff.ts --mode=incremental",
+    "gate:5": "vite build",
+    "gate:all:force": "npm run gate:1 && npm run gate:2 && npm run gate:3 && npm run gate:4:force && npm run gate:5",
+    "gate:fast": "npm run gate:1 && npm run gate:2",
+    "prepare": "husky",
+    "preview": "vite preview",
+    "sanitize": "eslint --fix . && prettier --write --cache --cache-location .cache/prettier/.prettiercache ."
+  },
+  "keywords": [
+    "faf",
+    "react",
+    "react-compiler",
+    "typescript",
+    "vite"
+  ],
+  "author": "Luca Morricone",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@changesets/cli": "^2.31.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/types": "^21.2.3",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
+    "@eslint/js": "^10.0.1",
+    "@morriconeluca/eslint-plugin-faf": "^0.6.0",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/vitest-runner": "^10.1.1",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.1",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@typescript-eslint/utils": "^8.24.1",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/coverage-v8": "^4.1.12",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "dependency-cruiser": "^17.4.3",
+    "eslint": "^10.14.0",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-jsdoc": "^65.4.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-perfectionist": "^5.9.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.6",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "eslint-plugin-unicorn": "^79.0.0",
+    "fs-fixture": "^2.16.0",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "jsdom": "^31.0.0",
+    "lint-staged": "^17.0.7",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0",
+    "vite": "^8.3.0",
+    "vitest": "^4.1.9",
+    "zod": "^4.6.7"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "src/**/*.{ts,tsx}": "eslint --fix"
+  },
+  "overrides": {
+    "eslint": "$eslint"
+  }
+}

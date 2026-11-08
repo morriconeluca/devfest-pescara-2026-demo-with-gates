@@ -1,0 +1,10 @@
+dist
+coverage
+reports
+.stryker-tmp
+.cache
+node_modules
+package-lock.json
+.husky
+.gemini
+.agents
