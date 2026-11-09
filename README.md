@@ -1,4 +1,39 @@
-# repo-vite-react-base
+# Il Terminale dell'Operatore — Demo With Gates
+
+> **DevFest Pescara 2026**  
+> **Talk:** _Dalla Sicofanzia alla Realtà: Agent Harness Deterministici per l'SDLC_  
+> **Speaker:** Luca Morricone ([@morriconeluca](https://github.com/morriconeluca))
+
+---
+
+## 🎯 Contesto del Progetto e Ruolo della Demo
+
+Questo repository contiene l'implementazione dell'applicazione **"Il Terminale dell'Operatore"** (Single Page Application React a tema Matrix Zion console) sviluppata durante la live demo della presentazione.
+
+All'interno dell'esperimento comparativo presentato al talk, questo repository incarna lo scenario **WITH GATES (Harness Deterministico)**:
+
+- Un agente orchestratore (`pi agent` con modello `gemini-3.8-flash-high`) coordina sub-agenti paralleli su tab dedicate [Herdr](https://github.com) e worktree git separati.
+- **Harness e Feedback Computazionali Obbligatori**: ogni sub-agente è tenuto a consultare la skill `solve-problem` e a superare tassativamente tutti i **5 Quality Gate sequenziali** prima di poter considerare concluso un task (`gate:4:diff` per i sub-agenti, `gate:4:incremental` per l'orchestratore).
+- L'introduzione del **Mutation Testing con Stryker (Gate 4)** assicura l'abbattimento del cosiddetto **"Test Theater"** (test tautologici generati da LLM che passano senza verificare realmente la logica o gli edge case).
+- L'architettura del codice è rigorosamente convalidata tramite **Fractal Architecture Framework (FAF)** e `@morriconeluca/eslint-plugin-faf`.
+
+Il prompt originale fornito all'orchestratore per governare i sub-agenti con i gate è disponibile in [`PROMPT.md`](./PROMPT.md).
+
+---
+
+## 🔗 Relazioni con gli Altri Repository
+
+Questa codebase fa parte della trilogia presentata al DevFest Pescara 2026:
+
+1. 📊 **[devfest-pescara-2026-slides](https://github.com/morriconeluca/devfest-pescara-2026-slides)**  
+   Slide ufficiali del talk (_"Dalla Sicofanzia alla Realtà: Agent Harness Deterministici per l'SDLC"_), disponibili in formato PDF e PowerPoint.
+
+2. 🔴 **[demo-pescara-2026-demo-without-gates](https://github.com/morriconeluca/demo-pescara-2026-demo-without-gates)**  
+   La **controparte senza Quality Gates**: lo stesso identico obiettivo applicativo affidato agli agenti, ma senza harness computazionale né mutation testing, per evidenziare il divario in termini di robustezza e qualità del codice.
+
+---
+
+## 🏗️ Architettura Base dell'Ambiente
 
 Base **Vite.js + React 19 + React Compiler + TypeScript** development environment governed by the **Fractal Architecture Framework (FAF)** and `@morriconeluca/eslint-plugin-faf`, with strict static analysis (including React, React Hooks / React Compiler, React Refresh, and JSX a11y rules), unit and integration testing, mutation testing, and Vite production build gates.
 
