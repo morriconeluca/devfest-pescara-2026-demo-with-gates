@@ -46,6 +46,7 @@ const testTemporaryDirectoryEnvironment = {
   TEMP: testTemporaryDirectory,
   TMP: testTemporaryDirectory,
   TMPDIR: testTemporaryDirectory,
+  TSESTREE_SINGLE_RUN: 'false',
 };
 
 export default defineConfig({
