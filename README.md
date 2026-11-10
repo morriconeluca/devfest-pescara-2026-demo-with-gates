@@ -28,7 +28,7 @@ Questa codebase fa parte della trilogia presentata al DevFest Pescara 2026:
 1. 📊 **[devfest-pescara-2026-slides](https://github.com/morriconeluca/devfest-pescara-2026-slides)**  
    Slide ufficiali del talk (_"Dalla Sicofanzia alla Realtà: Agent Harness Deterministici per l'SDLC"_), disponibili in formato PDF e PowerPoint.
 
-2. 🔴 **[demo-pescara-2026-demo-without-gates](https://github.com/morriconeluca/demo-pescara-2026-demo-without-gates)**  
+2. 🔴 **[devfest-pescara-2026-demo-without-gates](https://github.com/morriconeluca/devfest-pescara-2026-demo-without-gates)**  
    La **controparte senza Quality Gates**: lo stesso identico obiettivo applicativo affidato agli agenti, ma senza harness computazionale né mutation testing, per evidenziare il divario in termini di robustezza e qualità del codice.
 
 ---
